@@ -1,8 +1,8 @@
-var formulario = document.querySelector("#form")
+var formulario = document.querySelector(".formulario") // cambie por que no era un iD y no se llamaba form. 
 
-formulario.onsubmit = function(e) {
+formulario.onsubmit = function(evento) {
 
-  e.prevent();
+  evento.preventDefault();
   
   var n = formulario.elements[0]
   var e = formulario.elements[1]
@@ -55,9 +55,9 @@ function agregarInvitado(nombre, edad, nacionalidad) {
 var lista = document.getElementById("lista-de-invitados")
 
 var elementoLista = document.createElement("div")
-elementoLista.classList.added("elemento-lista")
+elementoLista.classList.add("elemento-lista") // no existe el metodo added el correcto es solo add 
 lista.appendChild(elementoLista)
-
+/*
 var spanNombre = document.createElement("span")
 var inputNombre = document.createElement("input")
 var espacio = document.createElement("br")
@@ -66,7 +66,7 @@ inputNombre.value = nombre
 elementoLista.appendChild(spanNombre)
 elementoLista.appendChild(inputNombre)
 elementoLista.appendChild(espacio)
-
+*/ // comente este codigo por que se dublicaba el nombre
 function crearElemento(descripcion, valor) {
 var spanNombre = document.createElement("span")
 var inputNombre = document.createElement("input")
